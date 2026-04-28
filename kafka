@@ -5,7 +5,7 @@ kubectl create -f 'https://strimzi.io/install/latest?namespace=kafka' -n kafka
 
 
 cat <<EOF | kubectl apply -f -
-apiVersion: kafka.strimzi.io/v1beta2
+apiVersion: kafka.strimzi.io/v1
 kind: KafkaNodePool
 metadata:
   name: dual-role
@@ -25,7 +25,7 @@ spec:
         size: 10Gi
         deleteClaim: true
 ---
-apiVersion: kafka.strimzi.io/v1beta2
+apiVersion: kafka.strimzi.io/v1
 kind: Kafka
 metadata:
   name: my-cluster
